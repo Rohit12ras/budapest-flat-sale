@@ -47,20 +47,77 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #211811 0%, #3d2410 50%, #654d1f 100%);
     color: white;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(182, 89, 22, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(182, 89, 22, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #b65916, transparent);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #ffffff 0%, #ffa726 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 20px rgba(255, 167, 38, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tagline {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 main {
@@ -758,5 +815,254 @@ footer {
 
     .location-info p {
         font-size: 1rem;
+    }
+}
+
+/* Contact Section - Stitch Template Style */
+.contact {
+    background: linear-gradient(135deg, #211811 0%, #3d2410 100%);
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.contact h2 {
+    color: white;
+    border-bottom: 3px solid #b65916;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.02em;
+}
+
+.contact h3 {
+    color: white;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.viewing-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.booking-form input,
+.booking-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+    border-color: #b65916;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.booking-form button {
+    background: linear-gradient(135deg, #b65916 0%, #d97a34 100%);
+    border-radius: 50px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 24px rgba(182, 89, 22, 0.3);
+}
+
+.booking-form button:hover {
+    box-shadow: 0 12px 32px rgba(182, 89, 22, 0.5);
+}
+
+.quick-contact {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.quick-contact a {
+    color: #ffa726;
+    font-weight: 600;
+}
+
+.quick-contact a:hover {
+    color: #ffb851;
+}
+
+/* WhatsApp Contact Styles */
+.whatsapp-contact {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(37, 211, 102, 0.1);
+    border: 2px solid rgba(37, 211, 102, 0.2);
+    border-radius: 16px;
+}
+
+.whatsapp-contact h3 {
+    color: #25D366;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.whatsapp-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.whatsapp-qr {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.whatsapp-qr img {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-qr p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+
+.whatsapp-link {
+    flex: 1;
+    min-width: 200px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Inter', -apple-system, sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-number {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #25D366;
+    font-weight: 700;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.contact .info-list {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact .info-list strong {
+    color: white;
+}
+
+.contact .info-list span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .whatsapp-link {
+        width: 100%;
+    }
+    
+    .whatsapp-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15) translateY(-4px);
+    box-shadow: 0 16px 48px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 15px rgba(37, 211, 102, 0.1);
+    }
+}
+
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    animation: ripple 2s infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
     }
 }

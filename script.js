@@ -68,26 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handling
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Contact form handling - Let Formspree handle the submission
+    // Form will submit directly to Formspree endpoint
 
-            // Get form data
-            const formData = new FormData(this);
-
-            // Here you would typically send the data to a server
-            // For now, we'll just show an alert
-            const message = currentLang === 'en'
-                ? 'Thank you for your interest! We will contact you soon.'
-                : 'Köszönjük érdeklődését! Hamarosan felvesszük Önnel a kapcsolatot.';
-            alert(message);
-
-            // Reset form
-            this.reset();
-        });
-    }
 
     // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -121,19 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Booking form handling
-    const bookingForm = document.querySelector('.booking-form');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Booking form handling - Let Formspree handle the submission
+    // Form will submit directly to Formspree endpoint
 
-            const message = currentLang === 'en'
-                ? 'Thank you for your viewing request! We will contact you within 24 hours to confirm the appointment.'
-                : 'Köszönjük megtekintési kérését! 24 órán belül felvesszük Önnel a kapcsolatot az időpont megerősítéséhez.';
-            alert(message);
-
-            // Reset form
-            this.reset();
-        });
-    }
 });

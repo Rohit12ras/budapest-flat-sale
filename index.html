@@ -309,18 +309,19 @@
             <div class="viewing-options">
                 <div class="viewing-option">
                     <h3>📅 <span data-en="Book Online" data-hu="Online foglalás">Book Online</span></h3>
-                    <form class="booking-form">
-                        <input type="text" data-placeholder-en="Your Name" data-placeholder-hu="Az Ön neve" placeholder="Your Name" required>
-                        <input type="email" data-placeholder-en="Your Email" data-placeholder-hu="Az Ön emailje" placeholder="Your Email" required>
-                        <input type="tel" data-placeholder-en="Your Phone" data-placeholder-hu="Az Ön telefonszáma" placeholder="Your Phone" required>
-                        <input type="date" data-placeholder-en="Preferred Date" data-placeholder-hu="Kívánt dátum" placeholder="Preferred Date" required>
-                        <select required>
+                    <form class="booking-form" action="https://formspree.io/f/mkoqpoyb" method="POST">
+                        <input type="text" name="name" data-placeholder-en="Your Name" data-placeholder-hu="Az Ön neve" placeholder="Your Name" required>
+                        <input type="email" name="email" data-placeholder-en="Your Email" data-placeholder-hu="Az Ön emailje" placeholder="Your Email" required>
+                        <input type="tel" name="phone" data-placeholder-en="Your Phone" data-placeholder-hu="Az Ön telefonszáma" placeholder="Your Phone" required>
+                        <input type="date" name="date" data-placeholder-en="Preferred Date" data-placeholder-hu="Kívánt dátum" placeholder="Preferred Date" required>
+                        <select name="time" required>
                             <option value="" data-en="Select Time" data-hu="Válasszon időpontot">Select Time</option>
                             <option value="morning" data-en="Morning (9:00 - 12:00)" data-hu="Délelőtt (9:00 - 12:00)">Morning (9:00 - 12:00)</option>
                             <option value="afternoon" data-en="Afternoon (12:00 - 17:00)" data-hu="Délután (12:00 - 17:00)">Afternoon (12:00 - 17:00)</option>
                             <option value="evening" data-en="Evening (17:00 - 19:00)" data-hu="Este (17:00 - 19:00)">Evening (17:00 - 19:00)</option>
                         </select>
-                        <textarea data-placeholder-en="Additional Notes (Optional)" data-placeholder-hu="További megjegyzések (opcionális)" placeholder="Additional Notes (Optional)" rows="3"></textarea>
+                        <textarea name="notes" data-placeholder-en="Additional Notes (Optional)" data-placeholder-hu="További megjegyzések (opcionális)" placeholder="Additional Notes (Optional)" rows="3"></textarea>
+                        <input type="hidden" name="_subject" value="Viewing Request - Budapest Flat">
                         <button type="submit" data-en="Request Viewing" data-hu="Megtekintés kérése">Request Viewing</button>
                     </form>
                 </div>
@@ -486,11 +487,12 @@
 
         <section class="contact">
             <h2 data-en="Interested? Get in Touch!" data-hu="Érdeklődik? Vegye fel velünk a kapcsolatot!">Interested? Get in Touch!</h2>
-            <form class="contact-form">
-                <input type="text" data-placeholder-en="Your Name" data-placeholder-hu="Az Ön neve" placeholder="Your Name" required>
-                <input type="email" data-placeholder-en="Your Email" data-placeholder-hu="Az Ön emailje" placeholder="Your Email" required>
-                <input type="tel" data-placeholder-en="Your Phone" data-placeholder-hu="Az Ön telefonszáma" placeholder="Your Phone">
-                <textarea data-placeholder-en="Your Message" data-placeholder-hu="Az Ön üzenete" placeholder="Your Message" rows="5"></textarea>
+            <form class="contact-form" action="https://formspree.io/f/mkoqpoyb" method="POST">
+                <input type="text" name="name" data-placeholder-en="Your Name" data-placeholder-hu="Az Ön neve" placeholder="Your Name" required>
+                <input type="email" name="email" data-placeholder-en="Your Email" data-placeholder-hu="Az Ön emailje" placeholder="Your Email" required>
+                <input type="tel" name="phone" data-placeholder-en="Your Phone" data-placeholder-hu="Az Ön telefonszáma" placeholder="Your Phone">
+                <textarea name="message" data-placeholder-en="Your Message" data-placeholder-hu="Az Ön üzenete" placeholder="Your Message" rows="5" required></textarea>
+                <input type="hidden" name="_subject" value="Contact Form - Budapest Flat">
                 <button type="submit" data-en="Send Message" data-hu="Üzenet küldése">Send Message</button>
             </form>
 
